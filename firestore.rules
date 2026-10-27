@@ -1,0 +1,46 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Admins are Firebase Auth users with the `admin` custom claim
+    // (granted by scripts/create-admin.mjs).
+    function isAdmin() {
+      return request.auth != null && request.auth.token.admin == true;
+    }
+
+    // One document per invitation. The document id is the unguessable token
+    // in the guest's personal link (?i=<id>), so guests can read their own
+    // invitation but never list the others.
+    match /invitados/{id} {
+      allow get: if true;
+      allow list, delete: if isAdmin();
+      allow create: if isAdmin() && validGuest(request.resource.data);
+
+      // Admins edit anything (keeping the guest valid); guests only their RSVP.
+      allow update: if isAdmin()
+        ? validGuest(request.resource.data)
+        : request.resource.data.diff(resource.data).affectedKeys().hasOnly(['rsvp'])
+          && validRsvp(request.resource.data.rsvp, resource.data.pases);
+    }
+
+    function validGuest(g) {
+      return g.keys().hasAll(['nombre', 'pases', 'grupo', 'orden'])
+        && g.keys().hasOnly(['nombre', 'pases', 'grupo', 'orden', 'rsvp'])
+        && g.nombre is string && g.nombre.size() > 0 && g.nombre.size() <= 120
+        && g.pases is int && g.pases >= 1 && g.pases <= 20
+        && g.grupo in ['raysa', 'harold', 'amigos']
+        && g.orden is int;
+    }
+
+    function validRsvp(r, pases) {
+      return r is map
+        && r.keys().hasOnly(['asiste', 'personas', 'mensaje', 'respondidoEn'])
+        && r.asiste is bool
+        && r.personas is int
+        && (r.asiste ? (r.personas >= 1 && r.personas <= pases) : r.personas == 0)
+        && r.mensaje is string && r.mensaje.size() <= 1000
+        && r.respondidoEn == request.time;
+    }
+  }
+}

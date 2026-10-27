@@ -1,0 +1,16 @@
+:root{
+/* Lino — beige paper grounds */
+--lino-50:#FCFAF5;--lino-100:#F6F1E7;--lino-200:#EEE6D6;--lino-300:#E2D5BE;--lino-400:#CDBB9C;
+/* Arena / Oro — sand & gold */
+--arena-100:#F3E7CC;--arena-300:#E0C891;--oro-400:#C9A461;--oro-500:#B48C45;--oro-600:#96733A;--oro-700:#7A5D2E;
+/* Azul — ink & accent blue */
+--azul-50:#EEF2F7;--azul-100:#DCE4EF;--azul-300:#9DB0CB;--azul-500:#56709A;--azul-600:#3E5780;--azul-700:#2E4468;--azul-900:#1D2A44;
+/* Rubor — illustration-only (cheeks, tiny hearts). Never UI. */
+--rubor-300:#EDBFB0;
+/* Semantic */
+--surface-page:var(--lino-100);--surface-card:var(--lino-50);--surface-sunken:var(--lino-200);--surface-inverse:var(--azul-900);
+--text-primary:var(--azul-900);--text-secondary:var(--azul-600);--text-muted:#5A6682;--text-accent:var(--oro-700);--text-on-inverse:var(--lino-50);
+--line-ink:var(--azul-900);--line-gold:var(--oro-500);
+--border-hairline:rgba(29,42,68,.14);--border-field:var(--lino-400);--border-strong:var(--azul-900);--border-focus:var(--azul-500);
+--success:#4F7A5C;--error:#A8473A;
+}

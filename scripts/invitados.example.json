@@ -1,0 +1,16 @@
+[
+  {
+    "id": "ana-perez-x7k2",
+    "nombre": "Sra. Ana Pérez",
+    "pases": 1,
+    "grupo": "raysa",
+    "orden": 1
+  },
+  {
+    "id": "luis-rojas-m4pq",
+    "nombre": "Sr. Luis Rojas y Sra.",
+    "pases": 2,
+    "grupo": "harold",
+    "orden": 1
+  }
+]

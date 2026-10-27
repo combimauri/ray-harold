@@ -1,0 +1,391 @@
+.adm {
+  min-height: 100vh;
+  background: var(--texture-paper), var(--surface-page);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.adm-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ---------------------------------------------------------------- Header */
+
+.adm-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.adm-eyebrow {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+
+.adm-title {
+  margin: 0;
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: var(--script-md);
+  line-height: 1.1;
+  color: var(--azul-700);
+}
+
+.adm-account {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* ----------------------------------------------------------------- Stats */
+
+.adm-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.adm-stat {
+  background: var(--surface-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-paper);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.adm-stat b {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.adm-stat span {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.adm-stat small {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.adm-stat.is-yes b { color: var(--success); }
+.adm-stat.is-no b { color: var(--error); }
+.adm-stat.is-pending b { color: var(--oro-600); }
+
+/* --------------------------------------------------------------- Toolbar */
+
+.adm-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.adm-toolbar .adm-search {
+  flex: 1 1 220px;
+}
+
+.adm-input,
+.adm-select {
+  min-height: 44px;
+  padding: 0 14px;
+  font: inherit;
+  color: var(--text-primary);
+  background: var(--lino-50);
+  border: 1.5px solid var(--border-field);
+  border-radius: var(--radius-md);
+  box-sizing: border-box;
+}
+
+.adm-input:focus,
+.adm-select:focus {
+  outline: none;
+  border-color: var(--azul-500);
+  box-shadow: 0 0 0 4px rgba(86, 112, 154, .16);
+}
+
+.adm-toolbar-actions {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+/* ------------------------------------------------------------------ List */
+
+.adm-card {
+  background: var(--surface-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-paper);
+  overflow: hidden;
+}
+
+.adm-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.adm-table th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-hairline);
+  white-space: nowrap;
+}
+
+.adm-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-hairline);
+  vertical-align: top;
+}
+
+.adm-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.adm-name {
+  font-weight: 500;
+}
+
+.adm-msg {
+  margin-top: 4px;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-secondary);
+  max-width: 34ch;
+}
+
+.adm-num {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.adm-muted {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.adm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.adm-badge.is-yes { background: #E3EDE5; color: var(--success); }
+.adm-badge.is-no { background: #F4E3E0; color: var(--error); }
+.adm-badge.is-pending { background: var(--arena-100); color: var(--oro-700); }
+
+.adm-group {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.adm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.adm-icon-btn {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--azul-700);
+  cursor: pointer;
+}
+
+.adm-icon-btn:hover { background: var(--lino-200); }
+.adm-icon-btn.is-danger { color: var(--error); }
+
+.adm-confirm {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.adm-text-btn {
+  border: 0;
+  background: none;
+  padding: 6px 8px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--azul-700);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+}
+
+.adm-text-btn:hover { background: var(--lino-200); }
+.adm-text-btn.is-danger { color: var(--error); }
+
+.adm-empty {
+  padding: 40px 16px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.adm-toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  transform: translateX(-50%);
+  background: var(--azul-900);
+  color: var(--lino-50);
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  box-shadow: var(--shadow-lift);
+  z-index: 100;
+}
+
+.adm-error {
+  color: var(--error);
+  font-size: 14px;
+}
+
+/* On phones each guest becomes a stacked card. */
+@media (max-width: 720px) {
+  .adm-table thead { display: none; }
+  .adm-table, .adm-table tbody, .adm-table tr, .adm-table td { display: block; }
+  .adm-table tr {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 6px 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-hairline);
+  }
+  .adm-table tr:last-child { border-bottom: 0; }
+  .adm-table td { padding: 0; border: 0; }
+  .adm-table td[data-col="nombre"] { grid-column: 1 / -1; }
+  .adm-table td[data-col="pases"]::before,
+  .adm-table td[data-col="personas"]::before {
+    content: attr(data-label) ' ';
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .adm-table td[data-col="actions"] { grid-column: 1 / -1; }
+  .adm-actions { justify-content: flex-start; margin-left: -8px; }
+  .adm-toolbar-actions { margin-left: 0; width: 100%; }
+  .adm-toolbar-actions > * { flex: 1; }
+}
+
+/* --------------------------------------------------------------- Dialogs */
+
+.adm-dialog {
+  width: min(440px, calc(100vw - 32px));
+  border: 0;
+  padding: 0;
+  border-radius: var(--radius-xl);
+  background: var(--surface-card);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-lift);
+}
+
+.adm-dialog::backdrop {
+  background: rgba(29, 42, 68, .35);
+}
+
+.adm-dialog form {
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.adm-dialog h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.adm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.adm-field .adm-input,
+.adm-field .adm-select {
+  font-weight: 400;
+  width: 100%;
+}
+
+.adm-field small {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.adm-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* ----------------------------------------------------------------- Login */
+
+.adm-login {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+}
+
+.adm-login form {
+  width: min(400px, 100%);
+  background: var(--surface-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-paper);
+  padding: 36px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: center;
+}

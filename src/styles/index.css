@@ -1,0 +1,10 @@
+@import "./tokens/fonts.css";
+@import "./tokens/colors.css";
+@import "./tokens/typography.css";
+@import "./tokens/spacing.css";
+@import "./tokens/motion.css";
+@import "./tokens/base.css";
+
+html,body{margin:0;background:var(--lino-200)}
+a{color:var(--azul-700)}
+a:hover{color:var(--oro-700)}

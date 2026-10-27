@@ -1,0 +1,8 @@
+:root{
+--text-xs:13px;--text-sm:15px;--text-base:17px;--text-lg:19px;--text-xl:22px;
+--display-sm:30px;--display-md:42px;--display-lg:58px;--display-xl:76px;
+--script-sm:40px;--script-md:54px;--script-lg:72px;
+--hand-sm:18px;--hand-md:22px;--hand-lg:28px;
+--leading-tight:1.02;--leading-snug:1.25;--leading-body:1.6;
+--tracking-caps:.22em;--tracking-names:.06em;
+}
